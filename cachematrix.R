@@ -29,3 +29,16 @@ cacheSolve <- function(x, ...){
         x$setinverse(matinv)
         matinv
 }
+
+## Testing the functions
+## Create a matrix using sample(). 
+mat.test <- makeCacheMatrix(matrix(sample(9), ncol = 3))
+## Get the matrix 
+mat.test$get()
+## Get the inverse of mat.test.
+mat.test$getinverse()
+## If null, then inverse is not cashed. 
+## Use cacheSOlve to compute inverse of mat.test
+cacheSolve(mat.test)
+## The inverse computed, I run settinverse again 
+mat.test$getinverse()
